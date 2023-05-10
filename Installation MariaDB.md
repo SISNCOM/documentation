@@ -117,7 +117,7 @@ use <db name>
 12) Ajouter deux nouveaux utilisateurs et les relier aux IP nécéssaires:
    
 
-```sql
+```
 create user '<username>'@'IP' IDENTIFIED BY '<db password>';
 ```
 ```sql
@@ -130,3 +130,43 @@ GRANT ALL PRIVILEGES ON <db name>.* TO '<username>'@'IP';
 ```
 FLUSH PRIVILEGES
 ```
+   
+14) Pour retirer la variable bind_address du fichier de configuration MySQL sur Ubuntu, vous pouvez suivre les étapes suivantes : 
+   
+- Ouvrez le fichier de configuration MySQL mariadb.conf avec un éditeur de texte. Vous pouvez utiliser la commande suivante dans le terminal pour ouvrir le fichier avec l'éditeur de texte nano :
+   
+   ```
+   sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+   ```
+   
+- Recherchez la ligne qui contient la variable bind_address. Cette ligne peut ressembler à ceci et commenter là en ajoutant un (#) devant la ligne:
+   ```
+      #bind-address            = 127.0.0.1
+   ```
+   
+- Redémarrez le serveur MySQL pour appliquer les modifications de configuration. Vous pouvez utiliser la commande suivante pour redémarrer le serveur MySQL : 
+   ```
+   sudo systemctl restart mysql
+   ```
+Cette commande arrêtera le serveur MySQL, appliquera les modifications de configuration, puis redémarrera le serveur MySQL. Après cela, le serveur MySQL n'utilisera plus de valeur spécifique pour bind_address.
+   
+Pour Verifier que votre utilisateur relier à l'IP de votre serveur cible est bien fonctionnelle.
+Rendez vous sur votre serveur/vm SQL est suivez les étapes suivantes : 
+   
+15) On test tout d'abord que les deux serveurs communique bien sur la meme adresse réseau ou que l'adresse du serveur cible est bien allumé.
+   Rendez vous sur votre VM/Serveur SQL et executé les commandes suivantes : 
+   ```
+   /$ ping <IP cible>
+   ```
+   
+   ```
+PING <IP cible> (<IP cible>) 56(84) bytes of data.
+64 bytes from <IP cible>: icmp_seq=1 ttl=64 time=0.135 ms
+64 bytes from <IP cible>: icmp_seq=2 ttl=64 time=0.038 ms
+64 bytes from <IP cible>: icmp_seq=3 ttl=64 time=0.031 ms
+64 bytes from <IP cible>: icmp_seq=4 ttl=64 time=0.034 ms
+64 bytes from <IP cible>: icmp_seq=5 ttl=64 time=0.044 ms
+  ```
+   
+ 
+  
