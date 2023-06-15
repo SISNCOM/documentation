@@ -3,6 +3,7 @@
 
 **OS : Windows 10**   
    
+   
 
    Prérequis :      
 
@@ -12,7 +13,7 @@ https://dev.mysql.com/downloads/installer/
 
 Veillez à choisir la bonne version à installer soit là Windows (x86, 32-bit), MSI Installer	8.0.33	qui pèse 428.3M.
 
-Après avoir installer MYSQL, le configurer afin de pouvoir lancer une instance mysql grâce à la commande depuis l'invite de commande windows.
+Après avoir installé MYSQL, le configurer afin de pouvoir lancer une instance mysql grâce à la commande depuis l'invite de commande windows.
 
 ```
 mysql -u<identifiant bdd> -h<adresse hote de la bdd> -p sis4web
@@ -22,14 +23,14 @@ mysql -u<identifiant bdd> -h<adresse hote de la bdd> -p sis4web
 
 https://www.python.org/downloads/release/python-3913/
 
-L'installation va nous permettre d'installer python et son arboresence de fichier et libraire.
+L'installation va nous permettre d'installer python et son arborescence de fichiers et libraire.
 
-N'oubliez pas de mettre à jours vos variable d'environnement en y ajoutant le ***bin*** de mysql et python. 
+N'oubliez pas de mettre à jour vos variables d'environnement en y ajoutant le dossier ***bin*** de mysql et python.
 
-3) Créer le dossier ```sisncome``` 
+3) Créer le dossier ```sisncom``` 
 
-Rendez-vous sur votre disque de travail et créée un dossier sisncom à la racine puis ses 3 sous-dossiers associées.
-Ouvrez une invite de commande est taper : 
+Rendez-vous sur votre disque de travail est créée un dossier sisncom à la racine puis ses 3 sous-dossiers associés.
+Ouvrez une invite de commande et entrer la commande suivante : 
 
 ```mkdir -p sisncom/config sisncom/python sisncom/services```
 
@@ -42,7 +43,7 @@ Ouvrez une invite de commande est taper :
 Rendez-vous sur https://github.com/SISNCOM/sis4web_python_libraries
    
 
-afin d'installer nos libraire python, vous devez au préalable installer git dans le but de cloner les répos git dans le dossier de destintation python.
+afin d'installer nos libraires python, vous devez au préalable installer git dans le but de cloner les repos git dans le dossier de destination python.
 
 Voici l'arboresence de python post-installation : 
 
@@ -53,31 +54,47 @@ Voici l'arboresence de python post-installation :
         └── Programs
             └── Python
                 └── Python3.9
-                    ├── DLLs: Ce répertoire contient les bibliothèques dynamiques (DLL) utilisées par Python.
-                    ├── include: Ce répertoire contient les fichiers d'en-tête (headers) utilisés lors de la compilation de modules Python.
+                    ├── DLLs
+                    ├── include
                     ├── Lib
-                    │   └── site-packages: Ce sous-répertoire contient les packages Python installés à l'aide de pip ou d'autres outils de gestion de paquets.
-                    ├── Scripts: Ce répertoire contient les scripts exécutables associés à Python, tels que pip et d'autres outils.
-                    ├── python.exe: C'est l'exécutable principal de Python.
-                    ├── pythonw.exe: C'est l'exécutable principal de Python en mode fenêtré.
-                    ├── python3.dll: Il s'agit de la bibliothèque dynamique (DLL) principale de Python.
-                    ├── python39.dll: Il s'agit également d'une bibliothèque dynamique (DLL) principale de Python.
+                    │   └── site-packages
+                    ├── Scripts
+                    ├── python.exe
+                    ├── pythonw.exe
+                    ├── python3.dll
+                    ├── python39.dll
                     ├── python39._pth 
-                    ├── python39.zip: Il s'agit d'une archive compressée contenant les fichiers principaux de Python.
-                    ├── pyvenv.cfg: Ce fichier contient la configuration de l'environnement virtuel Python.
-                    ├── LICENSE.txt: Ce fichier contient les termes de la licence de Python.
-                    ├── NEWS.txt: Ce fichier contient les notes de version de Python.
-                    └── README.txt: Ce fichier contient des informations générales sur l'installation de Python.
+                    ├── python39.zip
+                    ├── pyvenv.cfg
+                    ├── LICENSE.txt
+                    ├── NEWS.txt
+                    └── README.txt
 ```
+   
+
+----   
+- Dirigez-vous vers le dossier ```Lib``` puis lancer la commande: ```git clone https://github.com/SISNCOM/sis4web_python_libraries.git```
 
 
-Diriger vous vers le dossier ```Lib``` puis lancer la commande 
-```git clone https://github.com/SISNCOM/sis4web_python_libraries.git```
+- Dirigez-vous ensuite vers le dossier ```sisncom\python``` puis lancer la commande:    ```https://github.com/SISNCOM/sisncom-python-executables.git .``` ( Attention à ne pas oublier le "point" à la fin de la commande ! )
 
 #### Config
 
-Diriger vous vers le dossier ```config``` dans le dossier ```sisncom``` à la racine de votre disque où vous avez créée le dossier au préalable (voir Prérequis). 
+- Dirigez-vous vers le dossier ```config``` dans le dossier ```sisncom``` à la racine de votre disque où vous avez créée le dossier au préalable (voir Prérequis). 
 
-Lancer la commande ```git clone https://github.com/SISNCOM/config.git```
+- Lancez la commande:```git clone https://github.com/SISNCOM/config.git . ```( Attention à ne pas oublier le "point" à la fin de la commande ! )
 
+#### Services
+
+- Dirigez-vous vers le dossier ```sisncom\services``` dans le dossier ```sisncom``` à la racine de votre disque où vous avez créée le dossier au préalable (voir Prérequis). 
+
+- Lancez-la commande:```https://github.com/SISNCOM/sisncom-cpp-executables.git .```( Attention à ne pas oublier le "point" à la fin de la commande ! )
+
+Lancer un des services disponibles : 
+- 1_srvImg
+- 2_screenDisque
+- ...
+
+Dans le cas où vous tombez sur une erreur de fichier .dll manquant.
+Téléchargez le dll ```libmysql.dll``` et déposez-le sur le dossier ```systeme32```, puis relancez le service et verifiez qu'il se lance.
 
