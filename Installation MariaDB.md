@@ -1,8 +1,10 @@
 
 # Procédure d'installation de MariaDB
 
-***OS : Linux Ubuntu20.4***    
-***Client SQL : MariaDB***
+prérequis :
+
+- OS version : Ubuntu 22.04.2 LTS   
+- SGBD MariaDB version : 10.3.28-MariaDB ou 10.6-MariaDB
 
 ---
 
