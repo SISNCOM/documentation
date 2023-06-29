@@ -54,9 +54,12 @@ sudo systemctl status apache2
 ```
 
 
-cd /var/www/html
-rm index.html
-git clone https://github.com/SISNCOM/sis4web.git
+- cd /var/www/html
+- rm index.html
+- git clone https://github.com/SISNCOM/sis4web.git
 
+
+sudo chown -R www-data:www-data sis4web
+sudo chmod -R 775 sis4web
 
 
