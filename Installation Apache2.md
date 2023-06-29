@@ -39,14 +39,6 @@ phpenmod mbstring
 a2enmod rewrite
 ```
 
-Vous devriez avoir une réponse tel que : 
-
-```
-Enabling module rewrite.
-To activate the new configuration, you need to run:
-  systemctl restart apache2
-```
-
 7) Redémarrez alors comme demandé ci-dessus le service PHP en exécutant la commande suivante :
     
 
