@@ -23,31 +23,9 @@ sudo apt install apache2
    
    
 ```
-sudo apt install php libapache2-mod-php php-mysql
+sudo apt install php libapache2-mod-php php-mysql  php-mbstring
 ```
 
-3) Vous pouvez verifier la version de PHP installer  :   
-   
-   
-```
-php -v
-```
-
-Le résultat attendu est tel que : 
-
-```
-PHP 8.1.2-1ubuntu2.11 (cli) (built: Feb 22 2023 22:56:18) (NTS)
-Copyright (c) The PHP Group
-Zend Engine v4.1.2, Copyright (c) Zend Technologies
-with Zend OPcache v8.1.2-1ubuntu2.11, Copyright (c), by Zend Technologies
-```
-
-
-4) Installer mbstring : 
-
-```
-apt install php-mbstring
-```
 
 5) Activer mbstring sur php : 
 
