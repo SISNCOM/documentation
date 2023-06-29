@@ -23,7 +23,7 @@ sudo apt install apache2
    
    
 ```
-sudo apt install php libapache2-mod-php php-mysql  php-mbstring
+sudo apt install php mysql-client libapache2-mod-php php-mysql php-mbstring
 ```
 
 
@@ -54,6 +54,7 @@ sudo systemctl status apache2
 ```
 
 
+
 - cd /var/www/html
 - rm index.html
 - git clone https://github.com/SISNCOM/sis4web.git
@@ -62,4 +63,9 @@ sudo systemctl status apache2
 sudo chown -R www-data:www-data sis4web
 sudo chmod -R 775 sis4web
 
+
+- git clone https://github.com/SISNCOM/config.git
+
+sudo chown -R www-data:www-data config
+sudo chmod -R 775 config
 
