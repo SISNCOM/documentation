@@ -44,22 +44,15 @@ C'est fait !  Si vous avez suivi toutes les étapes ci-dessus, votre installatio
     
 
 ```
-sudo systemctl restart mysql
+sudo service mysql restart
 ```
 
-5) Vérifiez que le service est en cours d'exécution en exécutant la commande suivante :
-   
-
-```
-sudo systemctl status mysql
-```
-   
 
 6) Lancer la connexion à la base de données et entrer le mot de passe définit plus haut : 
    
 
 ```
-mysql -u root -p
+mysql
 ```
 
 Suite à cela, vous devriez avoir un affichage comme ci-dessous :
@@ -80,47 +73,49 @@ MariaDB [(none)]>
    
 
 ```mysql
-CREATE DATABASE <db name>
+CREATE DATABASE sis4web;
 ```
 
 8) Création d'un utilisateur
 
 
 ```sql
-create user '<username>'@'localhost' IDENTIFIED BY '<db password>';
+create user 'sis4web'@'localhost' IDENTIFIED BY '<votre mot de passe>';
 ```
 
 9) Allocation des privileges à l'utilisateur <username> : 
     
     
 ```sql
-GRANT ALL PRIVILEGES ON <db name>.* TO '<username>'@'localhost';
+GRANT ALL PRIVILEGES ON sis4web.* TO 'sis4web'@'localhost';
 ```
-Vous pouvez verifier que les privileges ont été accorder en executant cette commande : 
-   
 
-```sql
-SHOW GRANTS FOR '<db name>'@'localhost';
-```
 10) Utilisé la base de données : 
    
-
 ```sql
-use <db name>
+use sis4web
 ```
+
+
+11) Télécharger le fichier de base de données : 
+
+#-----#
 
 11) Importé les fichiers sql : 
    
 
 ```sql
+use sis4web
 \. <filename.sql>
 ```
 
 12) Ajouter deux nouveaux utilisateurs et les relier aux IP nécéssaires:
-   
 
 ```
-create user '<username>'@'IP' IDENTIFIED BY '<db password>';
+create user sis4web@'IP-VM-WEB' IDENTIFIED BY '<votre mot de passe>';
+create user sis4web@'IP-VM-CALC' IDENTIFIED BY '<votre mot de passe>';
+create user glb4web@'IP-VM-WEB' IDENTIFIED BY '<votre mot de passe>';
+create user glb4web@'IP-VM-CALC' IDENTIFIED BY '<votre mot de passe>';
 ```
 ```sql
 GRANT ALL PRIVILEGES ON <db name>.* TO '<username>'@'IP';
@@ -150,25 +145,20 @@ FLUSH PRIVILEGES
    ```
    sudo systemctl restart mysql
    ```
-Cette commande arrêtera le serveur MySQL, appliquera les modifications de configuration, puis redémarrera le serveur MySQL. Après cela, le serveur MySQL n'utilisera plus de valeur spécifique pour bind_address.
-   
-Pour Verifier que votre utilisateur relier à l'IP de votre serveur cible est bien fonctionnelle.
-Rendez vous sur votre serveur/vm SQL est suivez les étapes suivantes : 
-   
-15) On test tout d'abord que les deux serveurs communique bien sur la meme adresse réseau ou que l'adresse du serveur cible est bien allumé.
-   Rendez vous sur votre VM/Serveur SQL et executé les commandes suivantes : 
-   ```
-   /$ ping <IP cible>
-   ```
-   
-   ```
-PING <IP cible> (<IP cible>) 56(84) bytes of data.
-64 bytes from <IP cible>: icmp_seq=1 ttl=64 time=0.135 ms
-64 bytes from <IP cible>: icmp_seq=2 ttl=64 time=0.038 ms
-64 bytes from <IP cible>: icmp_seq=3 ttl=64 time=0.031 ms
-64 bytes from <IP cible>: icmp_seq=4 ttl=64 time=0.034 ms
-64 bytes from <IP cible>: icmp_seq=5 ttl=64 time=0.044 ms
-  ```
-   
- 
+
+
+# INSTALLER PHPMYADMIN
+
+
+1) sudo apt-get install php libapache2-mod-php php-mysql
+
+1) sudo apt-get install PHPMYADMIN
+
+2)
+- apache -> appuyer sur entrer
+- dbCommon-> yes 
+- mdp (mettre le meme que pour la db) -> Entrer
+
+3) redemarrer apache 
+
   
