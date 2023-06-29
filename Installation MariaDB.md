@@ -118,7 +118,10 @@ create user glb4web@'IP-VM-WEB' IDENTIFIED BY '<votre mot de passe>';
 create user glb4web@'IP-VM-CALC' IDENTIFIED BY '<votre mot de passe>';
 ```
 ```sql
-GRANT ALL PRIVILEGES ON <db name>.* TO '<username>'@'IP';
+GRANT ALL PRIVILEGES ON sis4web.* TO sis4web@'192.168.255.14';
+GRANT ALL PRIVILEGES ON sis4web.* TO sis4web@'192.168.255.24';
+GRANT ALL PRIVILEGES ON sis4web.* TO glb4web@'192.168.255.14';
+GRANT ALL PRIVILEGES ON sis4web.* TO glb4web@'192.168.255.24'
 ```
 
 13) Recharger les privilèges MySQL stockés en mémoire et les réappliquer immédiatement: 
