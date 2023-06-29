@@ -53,3 +53,10 @@ sudo systemctl restart apache2
 sudo systemctl status apache2
 ```
 
+
+cd /var/www/html
+rm index.html
+git clone https://github.com/SISNCOM/sis4web.git
+
+
+
