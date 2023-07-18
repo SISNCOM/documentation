@@ -150,18 +150,18 @@ FLUSH PRIVILEGES
    ```
 
 
-# INSTALLER PHPMYADMIN
+# Installation de Phpmyadmin
 
 
-1) sudo apt-get install php libapache2-mod-php php-mysql
+1) Entrer la commande : sudo apt-get install php libapache2-mod-php php-mysql
 
-1) sudo apt-get install PHPMYADMIN
+1) sudo apt-get install phpmyadmin
 
-2)
-- apache -> appuyer sur entrer
-- dbCommon-> yes 
-- mdp (mettre le meme que pour la db) -> Entrer
+2) Suivez les étapes d'installation ci-dessous : 
+- "apache" appuyer sur **ENTRER**
+- "dbCommon" entrer **YES** 
+- Pour le mot de pass (mettre le meme que pour la db), appyer sur **ENTRER**
 
-3) redemarrer apache 
+3) Pour finir, **REDEMARRER** Apache. 
 
   
