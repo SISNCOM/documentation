@@ -1,10 +1,10 @@
 
 # Procédure d'installation de MariaDB
 
-prérequis :
+Prérequis :
 
-- OS version : Ubuntu 22.04.2 LTS   
-- SGBD MariaDB version : 10.3.28-MariaDB ou 10.6-MariaDB
+- OS : Ubuntu 22.04.2 LTS   
+- MariaDB version : 10.3.28-MariaDB ou 10.6-MariaDB
 
 ---
 
@@ -32,7 +32,7 @@ sudo mysql_secure_installation
 
 - Lorsqu'on vous demande de saisir le mot de passe actuel, appuyez simplement sur Entrée car il n'y en a pas.   
 - Pour le commutateur d'authentification du socket Unix, vous pouvez laisser la valeur par défaut, qui est "Yes".   
-- Changez le mot de passe root de MySQL en suivant les instructions à l'écran (assurez-vous de ne pas perdre ce mot de passe).   
+- Changez le mot de passe root de MySQL en suivant les instructions à l'écran (Concervez le précieusement).   
 - Répondez "Yes" pour supprimer les utilisateurs anonymes.
 - Répondez "Yes" pour désactiver la connexion à distance de root.
 - Répondez "Yes" pour supprimer la base de données de test.
@@ -48,7 +48,7 @@ sudo service mysql restart
 ```
 
 
-6) Lancer la connexion à la base de données et entrer le mot de passe définit plus haut : 
+6) Lancer la connexion à la base de données et entrer le mot de passe défini précedemment : 
    
 
 ```
