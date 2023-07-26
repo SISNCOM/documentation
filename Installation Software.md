@@ -11,9 +11,9 @@
     
 https://dev.mysql.com/downloads/installer/
 
-Veillez à choisir la bonne version à installer soit là Windows (x86, 32-bit), MSI Installer	8.0.33	qui pèse 428.3M.
+Téléchargez la version "Windows (x86, 32-bit), MSI Installer 8.0.33" qui pèse 428.3M.
 
-Après avoir installé MYSQL, le configurer afin de pouvoir lancer une instance mysql grâce à la commande depuis l'invite de commande windows.
+Après avoir installé MYSQL, lancez depuis l'invité de commande windows afin de tester la connexion.
 
 ```
 mysql -u<identifiant bdd> -h<adresse hote de la bdd> -p sis4web
@@ -29,11 +29,10 @@ N'oubliez pas de mettre à jour vos variables d'environnement en y ajoutant le d
 
 3) Créer le dossier ```sisncom``` 
 
-Rendez-vous sur votre disque de travail est créée un dossier sisncom à la racine puis ses 3 sous-dossiers associés.
+Rendez-vous sur votre disque de travail est créez un dossier `sisncom` à la racine ainsi que ses 3 sous-dossiers associés.
 Ouvrez une invite de commande et entrer la commande suivante : 
 
 ```mkdir -p sisncom/config sisncom/python sisncom/services```
-
 
 
 ## Installation des programme
