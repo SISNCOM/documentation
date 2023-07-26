@@ -53,19 +53,18 @@ sudo systemctl restart apache2
 sudo systemctl status apache2
 ```
 
+9) Installation du code source de l'application
 
-
-- cd /var/www/html
-- rm index.html
-- git clone https://github.com/SISNCOM/sis4web.git
-
+```bash
+cd /var/www/html
+rm index.html
+git clone https://github.com/SISNCOM/sis4web.git #Connectez vous avec vos identifiants Github
 
 sudo chown -R www-data:www-data sis4web
 sudo chmod -R 775 sis4web
 
-
-- git clone https://github.com/SISNCOM/config.git
+git clone https://github.com/SISNCOM/config.git
 
 sudo chown -R www-data:www-data config
 sudo chmod -R 775 config
-
+```
