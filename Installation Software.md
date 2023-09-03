@@ -1,5 +1,5 @@
 
-# Procédure d'installation VM_CALCULE
+# Procédure d'installation VM_CALCUL
 
 **OS : Windows 10**   
    
